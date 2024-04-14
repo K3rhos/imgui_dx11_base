@@ -13,6 +13,7 @@
     <ClInclude Include="source\inputs_hook\inputs_hook.h" />
     <ClInclude Include="source\hooking\minhook.h" />
     <ClInclude Include="source\imgui\windows\window.h" />
+    <ClInclude Include="source\headers\defines.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\dllmain.cpp" />

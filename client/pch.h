@@ -26,6 +26,7 @@
 
 
 // Client app headers.
+#include "source/headers/defines.h"
 #include "source/headers/singleton.h"
 #include "source/headers/events_handler.h"
 #include "source/headers/utils.h"

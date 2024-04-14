@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source\headers\defines.h" />
     <ClInclude Include="source\hooking\minhook.h" />
     <ClInclude Include="source\inputs_hook\inputs_hook.h" />
     <ClInclude Include="source\imgui\imgui.h" />

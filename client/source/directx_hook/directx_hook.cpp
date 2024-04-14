@@ -143,7 +143,9 @@ namespace client
 		{
 			if (m_swap_chain == _swap_chain)
 			{
+				#if USE_RENDER_TARGET_VIEW
 				m_device_context->OMSetRenderTargets(1, &m_main_render_target_view, NULL);
+				#endif
 
 				call_event("on_render");
 			}
@@ -193,6 +195,7 @@ namespace client
 
 		m_device->GetImmediateContext(&m_device_context);
 
+		#if USE_RENDER_TARGET_VIEW
 		ID3D11Texture2D* back_buffer;
 		hr = _swap_chain->GetBuffer(0, IID_PPV_ARGS(&back_buffer));
 
@@ -205,7 +208,8 @@ namespace client
 		m_device->CreateRenderTargetView(back_buffer, NULL, &m_main_render_target_view);
 
 		utils::safe_release(&back_buffer);
-		
+		#endif
+
 		call_event("on_create_devices", this);
 
 		m_swap_chain = _swap_chain;
