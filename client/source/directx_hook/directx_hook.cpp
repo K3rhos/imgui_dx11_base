@@ -205,7 +205,11 @@ namespace client
 			return;
 		}
 
-		m_device->CreateRenderTargetView(back_buffer, NULL, &m_main_render_target_view);
+		D3D11_RENDER_TARGET_VIEW_DESC rtdesc{};
+		rtdesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+		rtdesc.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2D;
+
+		m_device->CreateRenderTargetView(back_buffer, &rtdesc, &m_main_render_target_view);
 
 		utils::safe_release(&back_buffer);
 		#endif
