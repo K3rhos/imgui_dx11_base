@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="source\app\app.h" />
+    <ClInclude Include="source\headers\singleton.h" />
+    <ClInclude Include="source\log\log.h" />
+    <ClInclude Include="source\headers\utils.h" />
+    <ClInclude Include="source\directx_hook\directx_hook.h" />
+    <ClInclude Include="resources\includes\MinHook\MinHook.h" />
+    <ClInclude Include="source\headers\events_handler.h" />
+    <ClInclude Include="source\imgui\imgui.h" />
+    <ClInclude Include="source\inputs_hook\inputs_hook.h" />
+    <ClInclude Include="source\hooking\minhook.h" />
+    <ClInclude Include="source\imgui\windows\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\dllmain.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="source\app\app.cpp" />
+    <ClCompile Include="source\log\log.cpp" />
+    <ClCompile Include="source\directx_hook\directx_hook.cpp" />
+    <ClCompile Include="source\imgui\imgui.cpp" />
+    <ClCompile Include="source\inputs_hook\inputs_hook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="resources\libraries\MinHook-Release.lib" />
+  </ItemGroup>
+</Project>
