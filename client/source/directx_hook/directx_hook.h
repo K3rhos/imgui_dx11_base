@@ -48,5 +48,6 @@ namespace client
 			IDXGISwapChain* m_swap_chain;
 			ID3D11Device* m_device;
 			ID3D11DeviceContext* m_device_context;
+			ID3D11RenderTargetView* m_main_render_target_view;
 	};
 }

@@ -11,6 +11,7 @@ namespace client
 		m_swap_chain = nullptr;
 		m_device = nullptr;
 		m_device_context = nullptr;
+		m_main_render_target_view = nullptr;
 	}
 
 
@@ -22,6 +23,7 @@ namespace client
 		utils::safe_release(&m_swap_chain);
 		utils::safe_release(&m_device);
 		utils::safe_release(&m_device_context);
+		utils::safe_release(&m_main_render_target_view);
 	}
 
 
@@ -141,6 +143,8 @@ namespace client
 		{
 			if (m_swap_chain == _swap_chain)
 			{
+				m_device_context->OMSetRenderTargets(1, &m_main_render_target_view, NULL);
+
 				call_event("on_render");
 			}
 			else
@@ -188,6 +192,19 @@ namespace client
 		}
 
 		m_device->GetImmediateContext(&m_device_context);
+
+		ID3D11Texture2D* back_buffer;
+		hr = _swap_chain->GetBuffer(0, IID_PPV_ARGS(&back_buffer));
+
+		if (FAILED(hr))
+		{
+			log::get()->print(log_error, "Failed to get back buffer !");
+			return;
+		}
+
+		m_device->CreateRenderTargetView(back_buffer, NULL, &m_main_render_target_view);
+
+		utils::safe_release(&back_buffer);
 		
 		call_event("on_create_devices", this);
 
