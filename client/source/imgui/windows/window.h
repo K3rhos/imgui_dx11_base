@@ -26,7 +26,9 @@ class window
 			if (m_open_key != ImGuiKey_None)
 			{
 				if (ImGui::IsKeyPressed(m_open_key))
+				{
 					m_is_open ^= true;
+				}
 			}
 
 			if (m_is_open)
