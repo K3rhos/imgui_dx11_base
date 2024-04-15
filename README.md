@@ -2,6 +2,9 @@
 
 This is a clean Universal ImGui DirectX11 base project I made for my personal usages, using C++ 20.
 
+> [!NOTE]
+> This project is a base made for learning and testing purposes, this is not a ready to use dll, there is no features relative to a specific game.
+
 ![Demo](https://i.imgur.com/jOuElFA.png)
 
 # How to use
