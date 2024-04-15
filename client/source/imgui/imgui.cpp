@@ -26,7 +26,7 @@ namespace client
 		m_io->IniFilename = NULL;
 		m_io->ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
-		// TODO: Add a custom font (instead of default one).
+		// TODO: Load a custom font (instead of default one).
 		m_io->Fonts->AddFontDefault();
 
 		m_style = &ImGui::GetStyle();
