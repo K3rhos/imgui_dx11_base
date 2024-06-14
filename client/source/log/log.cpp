@@ -63,8 +63,4 @@ namespace client
 			fclose(file);
 		}
 	}
-
-
-	void test()
-	{}
 }
